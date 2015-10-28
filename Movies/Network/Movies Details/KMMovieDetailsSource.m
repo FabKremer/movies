@@ -8,7 +8,7 @@
 
 #import "KMMovieDetailsSource.h"
 #import "KMSourceConfig.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 
 #define kSimilarMoviesUrlFormat @"%@/movie/%@?api_key=%@"
 

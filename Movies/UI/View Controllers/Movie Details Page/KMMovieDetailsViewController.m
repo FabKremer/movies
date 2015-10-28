@@ -10,20 +10,12 @@
 #import "StoryBoardUtilities.h"
 #import "KMMovieDetailsCell.h"
 #import "KMMovieDetailsDescriptionCell.h"
-#import "KMMovieDetailsSimilarMoviesCell.h"
-#import "KMSimilarMoviesCollectionViewCell.h"
 #import "KMMovieDetailsPopularityCell.h"
-#import "KMMovieDetailsCommentsCell.h"
-#import "KMMovieDetailsViewAllCommentsCell.h"
-#import "KMComposeCommentCell.h"
 #import "KMMovieDetailsSource.h"
-#import "KMSimilarMoviesSource.h"
-#import "KMSimilarMoviesViewController.h"
 #import "UIImageView+WebCache.h"
 
 @interface KMMovieDetailsViewController ()
 
-@property (nonatomic, strong) NSMutableArray* similarMoviesDataSource;
 @property (nonatomic, strong) KMNetworkLoadingViewController* networkLoadingViewController;
 @property (assign) CGPoint scrollViewDragPoint;
 
@@ -104,20 +96,6 @@
 #pragma mark -
 #pragma mark Network Request Methods
 
-- (void)requestSimilarMovies
-{
-    KMSimilarMoviesCompletionBlock completionBlock = ^(NSArray* data, NSString* errorString)
-    {
-        if (data != nil)
-            [self processSimilarMoviesData:data];
-        else
-            [self.networkLoadingViewController showErrorView];
-    };
-    
-    KMSimilarMoviesSource* source = [KMSimilarMoviesSource similarMoviesSource];
-    [source getSimilarMovies:self.movieDetails.movieId numberOfPages:@"1" completion:completionBlock];
-}
-
 - (void)requestMovieDetails
 {
     KMMovieDetailsCompletionBlock completionBlock = ^(KMMovie* movieDetails, NSString* errorString)
@@ -135,41 +113,17 @@
 #pragma mark -
 #pragma mark Fetched Data Processing
 
-- (void)processSimilarMoviesData:(NSArray*)data
-{
-    if ([data count] == 0)
-        [self.networkLoadingViewController showNoContentView];
-    else
-    {
-        if (!self.similarMoviesDataSource)
-            self.similarMoviesDataSource = [[NSMutableArray alloc] init];
-        
-        self.similarMoviesDataSource = [NSMutableArray arrayWithArray:data];
-        
-        [self.detailsPageView reloadData];
-        
-        [self hideLoadingView];
-    }
-}
-
 - (void)processMovieDetailsData:(KMMovie*)data
 {
     self.movieDetails = data;
     
-    [self requestSimilarMovies];
+    [self.detailsPageView reloadData];
+    
+    [self hideLoadingView];
 }
 
 #pragma mark -
 #pragma mark Action Methods
-
-- (void)viewAllSimilarMoviesButtonPressed:(id)sender
-{
-    KMSimilarMoviesViewController* viewController = (KMSimilarMoviesViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMSimilarMoviesStoryboard" class:[KMSimilarMoviesViewController class]];
-    
-    viewController.moviesDataSource = self.similarMoviesDataSource;
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-}
 
 - (IBAction)popViewController:(id)sender
 {
@@ -181,7 +135,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 3;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -224,66 +178,19 @@
             break;
         case 2:
         {
-            KMMovieDetailsSimilarMoviesCell *contributionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsSimilarMoviesCell"];
+            KMMovieDetailsDescriptionCell *descriptionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsDescriptionCell"];
             
-            if(contributionCell == nil)
-                contributionCell = [KMMovieDetailsSimilarMoviesCell movieDetailsSimilarMoviesCell];
+            if(descriptionCell == nil)
+                descriptionCell = [KMMovieDetailsDescriptionCell movieDetailsDescriptionCell];
             
-            [contributionCell.viewAllSimilarMoviesButton addTarget:self action:@selector(viewAllSimilarMoviesButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            descriptionCell.movieDescriptionLabel.text = self.movieDetails.movieSynopsis;
             
-            cell = contributionCell;
-            
-            break;
-        }
-        case 3:
-        {
-            KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
-            
-            if(commentsCell == nil)
-                commentsCell = [KMMovieDetailsCommentsCell movieDetailsCommentsCell];
-            
-            commentsCell.usernameLabel.text = @"Kevin Mindeguia";
-            commentsCell.commentLabel.text = @"Macaroon croissant I love tiramisu I love chocolate bar chocolate bar. Cheesecake dessert croissant sweet. Muffin gummies gummies biscuit bear claw. ";
-            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"kevin_avatar"]];
-            
-            cell = commentsCell;
-            
-            break;
-        }
-        case 4:
-        {
-            KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
-            
-            if(commentsCell == nil)
-                commentsCell = [KMMovieDetailsCommentsCell movieDetailsCommentsCell];
-            
-            commentsCell.usernameLabel.text = @"Andrew Arran";
-            commentsCell.commentLabel.text = @"Chocolate bar carrot cake candy canes oat cake dessert. Topping bear claw dragée. Sugar plum jelly cupcake.";
-            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"scrat_avatar"]];
-            
-            cell = commentsCell;
-            
-            break;
-        }
-        case 5:
-        {
-            KMMovieDetailsViewAllCommentsCell *viewAllCommentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsViewAllCommentsCell"];
-            
-            if(viewAllCommentsCell == nil)
-                viewAllCommentsCell = [KMMovieDetailsViewAllCommentsCell movieDetailsAllCommentsCell];
-            
-            cell = viewAllCommentsCell;
-            
-            break;
-        }
-        case 6:
-        {
-            KMComposeCommentCell *composeCommentCell = [tableView dequeueReusableCellWithIdentifier:@"KMComposeCommentCell"];
-            
-            if(composeCommentCell == nil)
-                composeCommentCell = [KMComposeCommentCell composeCommentsCell];
-            
-            cell = composeCommentCell;
+            cell = descriptionCell;
+
+//            KMMovieDetailsPopularityCell  *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
+//            
+//            
+//            cell = popularityCell;
             
             break;
         }
@@ -304,16 +211,6 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.contentView.backgroundColor = [UIColor clearColor];
-    
-    if ([cell isKindOfClass:[KMMovieDetailsSimilarMoviesCell class]])
-    {
-        KMMovieDetailsSimilarMoviesCell* similarMovieCell = (KMMovieDetailsSimilarMoviesCell*)cell;
-        
-        [similarMovieCell setCollectionViewDataSourceDelegate:self index:indexPath.row];
-    }
-    
-    if ([cell isKindOfClass:[KMMovieDetailsCommentsCell class]])
-        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, cell.bounds.size.width);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -329,29 +226,9 @@
         }
         case 1:
         {
-            height = 119;
+            height = 150;
             break;
         }
-        case 2:
-        {
-            if ([self.similarMoviesDataSource count] == 0)
-                height = 0;
-            else
-                height = 143;
-            
-            break;
-        }
-        case 5:
-        {
-            height = 46;
-            break;
-        }
-        case 6:
-        {
-            height = 62;
-            break;
-        }
-            
         default:
         {
             height = 100;
@@ -360,35 +237,6 @@
     }
     
     return height;
-}
-
-#pragma mark -
-#pragma mark UICollectionView DataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
-{
-    return [self.similarMoviesDataSource count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-{
-    KMSimilarMoviesCollectionViewCell* cell = (KMSimilarMoviesCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"KMSimilarMoviesCollectionViewCell" forIndexPath:indexPath];
-    
-    [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:[[self.similarMoviesDataSource objectAtIndex:indexPath.row] movieThumbnailPosterImageUrl]]];
-    
-    return cell;
-}
-
-#pragma mark -
-#pragma mark UICollectionView Delegate
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-{
-    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-    
-    viewController.movieDetails = [self.similarMoviesDataSource objectAtIndex:indexPath.row];
 }
 
 #pragma mark -
@@ -458,8 +306,6 @@
 
 -(void)retryRequest;
 {
-    [self requestSimilarMovies];
-    
     [self requestMovieDetails];
 }
 

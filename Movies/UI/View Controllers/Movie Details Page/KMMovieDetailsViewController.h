@@ -12,7 +12,7 @@
 #import "KMGillSansLabel.h"
 #import "KMNetworkLoadingViewController.h"
 
-@interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMDetailsPageDelegate>
+@interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, KMNetworkLoadingViewDelegate, KMDetailsPageDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *navigationBarView;
 @property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
