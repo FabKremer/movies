@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WxU-GJ-X9u" id="W3A-79-94c">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qdV-Ae-oeY">
@@ -71,12 +71,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk9-0e-1sk">
-                        <rect key="frame" x="276" y="21" width="26" height="23"/>
+                        <rect key="frame" x="269" y="21" width="37" height="23"/>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.63016081199999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="23" id="QgA-Eu-FWD"/>
-                            <constraint firstAttribute="width" constant="26" id="hDF-nq-VMF"/>
+                            <constraint firstAttribute="width" constant="37" id="hDF-nq-VMF"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,8 +94,8 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="DhN-1H-wCJ" firstAttribute="leading" secondItem="4KZ-5k-k4A" secondAttribute="trailing" id="5fK-Q0-hwG"/>
-                    <constraint firstItem="Rk9-0e-1sk" firstAttribute="leading" secondItem="MkN-DD-rye" secondAttribute="trailing" constant="15" id="9Rg-MZ-anl"/>
-                    <constraint firstAttribute="trailing" secondItem="Rk9-0e-1sk" secondAttribute="trailing" constant="18" id="BRT-mx-XFg"/>
+                    <constraint firstItem="Rk9-0e-1sk" firstAttribute="leading" secondItem="MkN-DD-rye" secondAttribute="trailing" constant="8" id="9Rg-MZ-anl"/>
+                    <constraint firstAttribute="trailing" secondItem="Rk9-0e-1sk" secondAttribute="trailing" constant="14" id="BRT-mx-XFg"/>
                     <constraint firstAttribute="centerX" secondItem="rHe-A1-ZzV" secondAttribute="centerX" id="HpC-Wf-epW"/>
                     <constraint firstAttribute="bottom" secondItem="0Ph-Cq-B8y" secondAttribute="bottom" id="JJA-Ur-hed"/>
                     <constraint firstItem="uKr-af-rZP" firstAttribute="top" secondItem="W3A-79-94c" secondAttribute="top" constant="36" id="QAB-Ws-cv6"/>

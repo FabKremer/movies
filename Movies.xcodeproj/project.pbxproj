@@ -48,6 +48,8 @@
 		7BFB81EF1B3C1739001030AC /* KMNetworkLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */; };
 		7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */; };
 		7BFB82111B3C1827001030AC /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB82101B3C1827001030AC /* MoviesTests.m */; };
+		8669C21E1BF12C6B00689C4D /* KMMovieDetailsCastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */; };
+		8669C2201BF12C9400689C4D /* KMMovieDetailsCastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */; };
 		ABE7289D1FF74AD688F0B347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D671AB54250C4F98B999C342 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,9 @@
 		7BFB820C1B3C1827001030AC /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFB820F1B3C1827001030AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BFB82101B3C1827001030AC /* MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTests.m; sourceTree = "<group>"; };
+		8669C21C1BF12C6B00689C4D /* KMMovieDetailsCastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsCastCell.h; sourceTree = "<group>"; };
+		8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMovieDetailsCastCell.m; sourceTree = "<group>"; };
+		8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMMovieDetailsCastCell.xib; sourceTree = "<group>"; };
 		D671AB54250C4F98B999C342 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF2931B78474548FFC95ED3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -399,6 +404,9 @@
 				7B66F5AA18A1729B0070DEB4 /* KMMovieDetailsPopularityCell.h */,
 				7B66F5AB18A1729B0070DEB4 /* KMMovieDetailsPopularityCell.m */,
 				7B66F5AD18A172AB0070DEB4 /* KMMovieDetailsPopularityCell.xib */,
+				8669C21C1BF12C6B00689C4D /* KMMovieDetailsCastCell.h */,
+				8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */,
+				8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */,
 			);
 			path = "Movie Details Cells";
 			sourceTree = "<group>";
@@ -559,6 +567,7 @@
 			files = (
 				7B2F319418A011A0008CD0DA /* InfoPlist.strings in Resources */,
 				7B329EAB18A13304004D77BF /* KMMovieDetailsSourceJsonPattern.json in Resources */,
+				8669C2201BF12C9400689C4D /* KMMovieDetailsCastCell.xib in Resources */,
 				7B2F31E018A01833008CD0DA /* KMSourceConfig.plist in Resources */,
 				7B66F5AE18A172AB0070DEB4 /* KMMovieDetailsPopularityCell.xib in Resources */,
 				7B329EA718A127E4004D77BF /* KMMovieDetailsDescriptionCell.xib in Resources */,
@@ -642,6 +651,7 @@
 				7BFB810A1B3C0BA1001030AC /* KMActivityIndicator.m in Sources */,
 				7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */,
 				7B2F31C118A011FE008CD0DA /* KMAppDelegate.m in Sources */,
+				8669C21E1BF12C6B00689C4D /* KMMovieDetailsCastCell.m in Sources */,
 				7B2F31EC18A018A3008CD0DA /* KM_NSDictionary+SafeValues.m in Sources */,
 				7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */,
 				7B329E6818A10EA1004D77BF /* KMDiscoverListViewController.m in Sources */,

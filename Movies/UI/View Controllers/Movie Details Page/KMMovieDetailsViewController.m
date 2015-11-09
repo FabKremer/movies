@@ -11,6 +11,7 @@
 #import "KMMovieDetailsCell.h"
 #import "KMMovieDetailsDescriptionCell.h"
 #import "KMMovieDetailsPopularityCell.h"
+#import "KMMovieDetailsCastCell.h"
 #import "KMMovieDetailsSource.h"
 #import "UIImageView+WebCache.h"
 
@@ -135,7 +136,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -174,23 +175,35 @@
             descriptionCell.movieDescriptionLabel.text = self.movieDetails.movieSynopsis;
             
             cell = descriptionCell;
-        }
+            
             break;
+        }
         case 2:
         {
-            KMMovieDetailsDescriptionCell *descriptionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsDescriptionCell"];
+            KMMovieDetailsPopularityCell *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
             
-            if(descriptionCell == nil)
-                descriptionCell = [KMMovieDetailsDescriptionCell movieDetailsDescriptionCell];
+            if(popularityCell == nil)
+                popularityCell = [KMMovieDetailsPopularityCell movieDetailsPopularityCell];
             
-            descriptionCell.movieDescriptionLabel.text = self.movieDetails.movieSynopsis;
+            popularityCell.popularityLabel.text = self.movieDetails.moviePopularity;
+            popularityCell.voteAverageLabel.text = self.movieDetails.movieVoteAverage;
+            popularityCell.voteCountLabel.text = self.movieDetails.movieVoteCount;
             
-            cell = descriptionCell;
-
-//            KMMovieDetailsPopularityCell  *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
-//            
-//            
-//            cell = popularityCell;
+            
+            cell = popularityCell;
+            
+            break;
+        }
+        case 3:
+        {
+            KMMovieDetailsCastCell *castCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCastCell"];
+            
+            if(castCell == nil)
+                castCell = [KMMovieDetailsCastCell movieDetailsCastCell];
+            
+            castCell.movieCastText.text = self.movieDetails.movieSynopsis;
+            
+            cell = castCell;
             
             break;
         }
@@ -227,6 +240,11 @@
         case 1:
         {
             height = 150;
+            break;
+        }
+        case 2:
+        {
+            height = 67;
             break;
         }
         default:

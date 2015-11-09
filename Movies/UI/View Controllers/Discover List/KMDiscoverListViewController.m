@@ -160,6 +160,7 @@
     [self.navigationController pushViewController:viewController animated:YES];
     
     viewController.movieDetails = [self.dataSource objectAtIndex:indexPath.row];
+    viewController.movieDetails.cast = [NSArray arrayWithObjects:@"Cameron Diaz",@"Matt Damon",@"La Fer del CAP", @"Fulano de Tal",nil];
 }
 
 #pragma mark -
