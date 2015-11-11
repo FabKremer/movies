@@ -50,6 +50,7 @@
 		7BFB82111B3C1827001030AC /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB82101B3C1827001030AC /* MoviesTests.m */; };
 		8669C21E1BF12C6B00689C4D /* KMMovieDetailsCastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */; };
 		8669C2201BF12C9400689C4D /* KMMovieDetailsCastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */; };
+		8686F0B71BF3D16B00A3CB72 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8686F0B61BF3D16B00A3CB72 /* SearchStoryboard.storyboard */; };
 		ABE7289D1FF74AD688F0B347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D671AB54250C4F98B999C342 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,7 @@
 		8669C21C1BF12C6B00689C4D /* KMMovieDetailsCastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsCastCell.h; sourceTree = "<group>"; };
 		8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMovieDetailsCastCell.m; sourceTree = "<group>"; };
 		8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMMovieDetailsCastCell.xib; sourceTree = "<group>"; };
+		8686F0B61BF3D16B00A3CB72 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SearchStoryboard.storyboard; path = ../../../SearchStoryboard.storyboard; sourceTree = "<group>"; };
 		D671AB54250C4F98B999C342 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF2931B78474548FFC95ED3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +283,7 @@
 		7B2F31BE18A011FE008CD0DA /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				8686F0B61BF3D16B00A3CB72 /* SearchStoryboard.storyboard */,
 				7B2F31C218A0121D008CD0DA /* KMDiscoverStoryboard.storyboard */,
 				7B329E8718A11E94004D77BF /* KMMovieDetailsStoryboard.storyboard */,
 			);
@@ -570,6 +573,7 @@
 				8669C2201BF12C9400689C4D /* KMMovieDetailsCastCell.xib in Resources */,
 				7B2F31E018A01833008CD0DA /* KMSourceConfig.plist in Resources */,
 				7B66F5AE18A172AB0070DEB4 /* KMMovieDetailsPopularityCell.xib in Resources */,
+				8686F0B71BF3D16B00A3CB72 /* SearchStoryboard.storyboard in Resources */,
 				7B329EA718A127E4004D77BF /* KMMovieDetailsDescriptionCell.xib in Resources */,
 				7B2F31C318A0121D008CD0DA /* KMDiscoverStoryboard.storyboard in Resources */,
 				7B329E9B18A123B5004D77BF /* KMMovieDetailsCell.xib in Resources */,

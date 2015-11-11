@@ -117,7 +117,8 @@
 - (void)processMovieDetailsData:(KMMovie*)data
 {
     self.movieDetails = data;
-    
+    self.movieDetails.cast = [NSArray arrayWithObjects:@"Cameron Diaz",@"Matt Damon",@"La Fer del CAP", @"Fulano de Tal",nil];
+
     [self.detailsPageView reloadData];
     
     [self hideLoadingView];
@@ -200,8 +201,8 @@
             
             if(castCell == nil)
                 castCell = [KMMovieDetailsCastCell movieDetailsCastCell];
-            
-            castCell.movieCastText.text = self.movieDetails.movieSynopsis;
+            NSString * cast = [self.movieDetails.cast componentsJoinedByString:@","];
+            castCell.movieCastText.text = cast;
             
             cell = castCell;
             
@@ -245,6 +246,11 @@
         case 2:
         {
             height = 67;
+            break;
+        }
+        case 3:
+        {
+            height = 100;
             break;
         }
         default:

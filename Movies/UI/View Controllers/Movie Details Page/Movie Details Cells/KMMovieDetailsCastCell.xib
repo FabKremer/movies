@@ -15,12 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="237" translatesAutoresizingMaskIntoConstraints="NO" id="fVW-ax-j6y">
-                        <rect key="frame" x="63" y="12" width="237" height="94"/>
-                        <animations/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JX-D6-jaG">
                         <rect key="frame" x="15" y="18" width="40" height="21"/>
                         <animations/>
@@ -35,9 +29,8 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY7-Sv-buB">
                         <rect key="frame" x="72" y="13" width="240" height="117"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
@@ -46,10 +39,7 @@
                     <constraint firstItem="6JX-D6-jaG" firstAttribute="top" secondItem="XEs-7g-bzh" secondAttribute="topMargin" constant="10" id="7gd-vF-akt"/>
                     <constraint firstItem="kY7-Sv-buB" firstAttribute="top" secondItem="XEs-7g-bzh" secondAttribute="topMargin" constant="5" id="DJ5-re-YK2"/>
                     <constraint firstAttribute="bottomMargin" secondItem="kY7-Sv-buB" secondAttribute="bottom" constant="5" id="F2I-cK-jnT"/>
-                    <constraint firstAttribute="trailing" secondItem="fVW-ax-j6y" secondAttribute="trailing" constant="20" id="L8B-AS-nnl"/>
                     <constraint firstItem="kY7-Sv-buB" firstAttribute="leading" secondItem="6JX-D6-jaG" secondAttribute="trailing" constant="17" id="YUI-9G-lu2"/>
-                    <constraint firstAttribute="bottom" secondItem="fVW-ax-j6y" secondAttribute="bottom" constant="12" id="Yf6-pF-jXx"/>
-                    <constraint firstItem="fVW-ax-j6y" firstAttribute="top" secondItem="XEs-7g-bzh" secondAttribute="top" constant="12" id="cAK-up-mCu"/>
                     <constraint firstItem="6JX-D6-jaG" firstAttribute="leading" secondItem="XEs-7g-bzh" secondAttribute="leadingMargin" constant="7" id="jS6-0M-FSm"/>
                     <constraint firstItem="kY7-Sv-buB" firstAttribute="trailing" secondItem="XEs-7g-bzh" secondAttribute="trailingMargin" id="s7e-Id-lHV"/>
                 </constraints>
