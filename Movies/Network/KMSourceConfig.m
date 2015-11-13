@@ -33,7 +33,7 @@
     if (self){
         NSBundle* bundle = [NSBundle bundleForClass:[self class]];
         NSDictionary* config = [[NSDictionary alloc]initWithContentsOfFile:[bundle pathForResource:@"KMSourceConfig" ofType:@"plist"]];
-        _theMovieDbHost = [config km_safeStringForKey:kConfigTheMovieDbHostKey];
+        _serverHost = [config km_safeStringForKey:kConfigTheMovieDbHostKey];
         _version = [config km_safeStringForKey:kConfigVersionKey];
         _build = [config km_safeStringForKey:kConfigBuildKey];
         _apiKey = [config km_safeStringForKey:kConfigApiKey];

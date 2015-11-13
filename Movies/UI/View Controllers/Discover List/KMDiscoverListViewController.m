@@ -58,6 +58,8 @@
 
 - (void)setupTableView
 {
+    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 150, 0)];
+
     if (!_refreshControl)
     {
         _refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0, -44, 320, 44)];

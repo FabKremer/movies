@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy, readonly) NSString* version;
 @property (nonatomic, copy, readonly) NSString* build;
-@property (nonatomic, copy, readonly) NSString* theMovieDbHost;
+@property (nonatomic, copy, readonly) NSString* serverHost;
 @property (nonatomic, copy, readonly) NSString* apiKey;
 
 @end

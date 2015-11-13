@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -144,13 +145,48 @@
                                     <segue destination="52t-g0-FSO" kind="embed" identifier="KMNetworkLoadingViewController" id="U3h-M2-FAZ"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cn-sy-YfE">
+                                <rect key="frame" x="0.0" y="364" width="320" height="140"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow-back" translatesAutoresizingMaskIntoConstraints="NO" id="Nou-nD-Ylz">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                        <animations/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="326-sA-6ec">
+                                        <rect key="frame" x="80" y="14" width="160" height="112"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                        <state key="normal" title="SEARCH!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="TGS-30-dG6" kind="modal" id="gsi-96-5gd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="326-sA-6ec" firstAttribute="centerY" secondItem="6Cn-sy-YfE" secondAttribute="centerY" id="2Xj-ew-0FW"/>
+                                    <constraint firstItem="326-sA-6ec" firstAttribute="height" secondItem="6Cn-sy-YfE" secondAttribute="height" multiplier="0.8" id="3ja-Kq-2YM"/>
+                                    <constraint firstItem="Nou-nD-Ylz" firstAttribute="top" secondItem="6Cn-sy-YfE" secondAttribute="top" id="BGI-nO-j0I"/>
+                                    <constraint firstItem="326-sA-6ec" firstAttribute="centerX" secondItem="6Cn-sy-YfE" secondAttribute="centerX" id="C6O-2c-MZm"/>
+                                    <constraint firstItem="Nou-nD-Ylz" firstAttribute="leading" secondItem="6Cn-sy-YfE" secondAttribute="leading" id="KLn-AS-eRL"/>
+                                    <constraint firstItem="Nou-nD-Ylz" firstAttribute="height" secondItem="6Cn-sy-YfE" secondAttribute="height" id="Nt8-C2-Y8W"/>
+                                    <constraint firstItem="326-sA-6ec" firstAttribute="width" secondItem="6Cn-sy-YfE" secondAttribute="width" multiplier="0.5" id="VDc-ff-y7e"/>
+                                    <constraint firstAttribute="height" constant="140" id="a1P-K9-eKO"/>
+                                    <constraint firstItem="Nou-nD-Ylz" firstAttribute="width" secondItem="6Cn-sy-YfE" secondAttribute="width" id="zm0-Qw-3C9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Cn-sy-YfE" firstAttribute="leading" secondItem="310-3N-BPE" secondAttribute="leading" id="32N-FE-e75"/>
                             <constraint firstItem="up5-Dc-Peg" firstAttribute="leading" secondItem="310-3N-BPE" secondAttribute="leading" id="HlG-DJ-ZPx"/>
+                            <constraint firstItem="BhS-f5-fDg" firstAttribute="top" secondItem="6Cn-sy-YfE" secondAttribute="bottom" id="Lvm-OF-Hlu"/>
                             <constraint firstItem="bxA-hR-IA7" firstAttribute="top" secondItem="dwp-wo-nYX" secondAttribute="bottom" id="RSU-mY-YJm"/>
                             <constraint firstItem="up5-Dc-Peg" firstAttribute="top" secondItem="dwp-wo-nYX" secondAttribute="bottom" id="Zho-lb-6aB"/>
+                            <constraint firstItem="6Cn-sy-YfE" firstAttribute="width" secondItem="310-3N-BPE" secondAttribute="width" id="blg-SJ-CvH"/>
                             <constraint firstItem="BhS-f5-fDg" firstAttribute="top" secondItem="up5-Dc-Peg" secondAttribute="bottom" id="hxc-wm-mlr"/>
                             <constraint firstItem="BhS-f5-fDg" firstAttribute="top" secondItem="bxA-hR-IA7" secondAttribute="bottom" id="j0N-dR-lCX"/>
                             <constraint firstAttribute="trailing" secondItem="up5-Dc-Peg" secondAttribute="trailing" id="sh0-oM-OcI"/>
@@ -170,6 +206,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCV-Qw-qNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="826" y="123"/>
+        </scene>
+        <!--SearchStoryboard-->
+        <scene sceneID="m3T-Ed-JNq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchStoryboard" id="TGS-30-dG6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26H-Ev-2Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826.5" y="605"/>
         </scene>
         <!--Network Loading View Controller-->
         <scene sceneID="J0G-D8-yFx">
@@ -323,6 +367,7 @@
     </scenes>
     <resources>
         <image name="refresh_button" width="48" height="48"/>
+        <image name="shadow-back" width="320" height="130"/>
         <image name="shadow_asset" width="160" height="48"/>
     </resources>
 </document>
