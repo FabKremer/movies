@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D7DDADB1BFA7F1C001E4243 /* OptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DDAD91BFA7F1C001E4243 /* OptionTableViewCell.m */; };
+		4D7DDADC1BFA7F1C001E4243 /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DDADA1BFA7F1C001E4243 /* OptionTableViewCell.xib */; };
+		4D7DDADF1BFA8159001E4243 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DDADE1BFA8159001E4243 /* OptionViewController.m */; };
 		7B0CD95018A2413E007A66A6 /* KMMoviePosterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CD94F18A2413E007A66A6 /* KMMoviePosterCell.m */; };
 		7B2F318A18A011A0008CD0DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2F318918A011A0008CD0DA /* Foundation.framework */; };
 		7B2F318C18A011A0008CD0DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2F318B18A011A0008CD0DA /* CoreGraphics.framework */; };
@@ -66,6 +69,11 @@
 
 /* Begin PBXFileReference section */
 		24318ADB7A19B955C7451243 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4D7DDAD81BFA7F1C001E4243 /* OptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionTableViewCell.h; sourceTree = "<group>"; };
+		4D7DDAD91BFA7F1C001E4243 /* OptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTableViewCell.m; sourceTree = "<group>"; };
+		4D7DDADA1BFA7F1C001E4243 /* OptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionTableViewCell.xib; sourceTree = "<group>"; };
+		4D7DDADD1BFA8159001E4243 /* OptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionViewController.h; sourceTree = "<group>"; };
+		4D7DDADE1BFA8159001E4243 /* OptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionViewController.m; sourceTree = "<group>"; };
 		7B0CD94E18A2413E007A66A6 /* KMMoviePosterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMoviePosterCell.h; sourceTree = "<group>"; };
 		7B0CD94F18A2413E007A66A6 /* KMMoviePosterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMoviePosterCell.m; sourceTree = "<group>"; };
 		7B2F318618A011A0008CD0DA /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +177,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D7DDAD41BFA7ED8001E4243 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D7DDAD81BFA7F1C001E4243 /* OptionTableViewCell.h */,
+				4D7DDAD91BFA7F1C001E4243 /* OptionTableViewCell.m */,
+				4D7DDADA1BFA7F1C001E4243 /* OptionTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7B0CD94818A23FF2007A66A6 /* Movies Collection View */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +289,7 @@
 		7B2F31BD18A011FE008CD0DA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4D7DDAD41BFA7ED8001E4243 /* Views */,
 				7BFB81011B3C0BA1001030AC /* Activity Indicator */,
 				7BFB81041B3C0BA1001030AC /* Details Page View */,
 				7BFB81071B3C0BA1001030AC /* Indexed Collection View */,
@@ -296,6 +315,8 @@
 				7B0CD94818A23FF2007A66A6 /* Movies Collection View */,
 				7B329E7918A10F27004D77BF /* Movie Details Page */,
 				7B329E6218A10EA1004D77BF /* Discover List */,
+				4D7DDADD1BFA8159001E4243 /* OptionViewController.h */,
+				4D7DDADE1BFA8159001E4243 /* OptionViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -577,6 +598,7 @@
 				7B329EA718A127E4004D77BF /* KMMovieDetailsDescriptionCell.xib in Resources */,
 				7B2F31C318A0121D008CD0DA /* KMDiscoverStoryboard.storyboard in Resources */,
 				7B329E9B18A123B5004D77BF /* KMMovieDetailsCell.xib in Resources */,
+				4D7DDADC1BFA7F1C001E4243 /* OptionTableViewCell.xib in Resources */,
 				7B329E8818A11E94004D77BF /* KMMovieDetailsStoryboard.storyboard in Resources */,
 				7BA9592418A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json in Resources */,
 				7B2F319C18A011A0008CD0DA /* Images.xcassets in Resources */,
@@ -649,6 +671,7 @@
 				7B2F31EE18A018A3008CD0DA /* KM_NSURL+Parameters.m in Sources */,
 				7B2F31D018A01717008CD0DA /* UIFont+GillSansFonts.m in Sources */,
 				7B2F31ED18A018A3008CD0DA /* KM_NSString+UrlEncoding.m in Sources */,
+				4D7DDADF1BFA8159001E4243 /* OptionViewController.m in Sources */,
 				7B329E7C18A10F37004D77BF /* KMMovieDetailsViewController.m in Sources */,
 				7B2F31EF18A018A3008CD0DA /* NSBundle+Loader.m in Sources */,
 				7B329E8618A11E72004D77BF /* KMMovieDetailsSource.m in Sources */,
@@ -662,6 +685,7 @@
 				7BFB810B1B3C0BA1001030AC /* KMDetailsPageView.m in Sources */,
 				7BA9592318A0263B0004A8A9 /* KMDiscoverSource.m in Sources */,
 				7B2F31EB18A018A3008CD0DA /* KM_NSArray+SafeValues.m in Sources */,
+				4D7DDADB1BFA7F1C001E4243 /* OptionTableViewCell.m in Sources */,
 				7B2F31D518A0176D008CD0DA /* KMMovie.m in Sources */,
 				7B2F31D818A01794008CD0DA /* KMBaseSource.m in Sources */,
 				7B66F5AC18A1729B0070DEB4 /* KMMovieDetailsPopularityCell.m in Sources */,
