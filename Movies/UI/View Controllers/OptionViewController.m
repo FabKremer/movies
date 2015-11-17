@@ -70,4 +70,8 @@
     return cell;
 }
 
+- (IBAction)goToSearch:(id)sender{
+     [self performSegueWithIdentifier: @"goToSearch" sender: self];
+}
+
 @end

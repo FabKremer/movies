@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0D5FF61BFBD16B00742A87 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D5FF51BFBD16B00742A87 /* SearchViewController.m */; };
 		4D7DDADB1BFA7F1C001E4243 /* OptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DDAD91BFA7F1C001E4243 /* OptionTableViewCell.m */; };
 		4D7DDADC1BFA7F1C001E4243 /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DDADA1BFA7F1C001E4243 /* OptionTableViewCell.xib */; };
 		4D7DDADF1BFA8159001E4243 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DDADE1BFA8159001E4243 /* OptionViewController.m */; };
@@ -69,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		24318ADB7A19B955C7451243 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4D0D5FF41BFBD16B00742A87 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		4D0D5FF51BFBD16B00742A87 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		4D7DDAD81BFA7F1C001E4243 /* OptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionTableViewCell.h; sourceTree = "<group>"; };
 		4D7DDAD91BFA7F1C001E4243 /* OptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTableViewCell.m; sourceTree = "<group>"; };
 		4D7DDADA1BFA7F1C001E4243 /* OptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionTableViewCell.xib; sourceTree = "<group>"; };
@@ -316,6 +319,8 @@
 				7B329E7918A10F27004D77BF /* Movie Details Page */,
 				7B329E6218A10EA1004D77BF /* Discover List */,
 				4D7DDADD1BFA8159001E4243 /* OptionViewController.h */,
+				4D0D5FF41BFBD16B00742A87 /* SearchViewController.h */,
+				4D0D5FF51BFBD16B00742A87 /* SearchViewController.m */,
 				4D7DDADE1BFA8159001E4243 /* OptionViewController.m */,
 			);
 			path = "View Controllers";
@@ -676,6 +681,7 @@
 				7B2F31EF18A018A3008CD0DA /* NSBundle+Loader.m in Sources */,
 				7B329E8618A11E72004D77BF /* KMMovieDetailsSource.m in Sources */,
 				7BFB810A1B3C0BA1001030AC /* KMActivityIndicator.m in Sources */,
+				4D0D5FF61BFBD16B00742A87 /* SearchViewController.m in Sources */,
 				7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */,
 				7B2F31C118A011FE008CD0DA /* KMAppDelegate.m in Sources */,
 				8669C21E1BF12C6B00689C4D /* KMMovieDetailsCastCell.m in Sources */,
