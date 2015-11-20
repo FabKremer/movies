@@ -29,6 +29,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    self.searchDictionary = [NSMutableDictionary dictionary];
+    
     return YES;
 }
 

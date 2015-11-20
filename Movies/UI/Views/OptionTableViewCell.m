@@ -21,25 +21,33 @@
     UITapGestureRecognizer *press = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlePress:)];
     press.delegate = self;
     [self addGestureRecognizer:press];
-    
-
 }
 
 -(IBAction) handlePress:(UITapGestureRecognizer *)sender {
-    NSLog(@"Normal Press");
-    self.backgroundColor = [UIColor greenColor];
+    if (self.state == OptionStateNeutral) {
+        self.state = OptionStatePositive;
+        self.optionLabel.textColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor colorWithRed:38/255.f green:166/255.f blue:91/255.f alpha:1];
+        [self.delegate didPositiveOptionWithName:self.optionLabel.text];
+    } else {
+        self.optionLabel.textColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
+        if (self.state == OptionStateNegative) {
+            [self.delegate didRemoveNagativeOptionWithName:self.optionLabel.text];
+        }else {
+            //OptionStatePositive
+            [self.delegate didRemovePositiveOptionWithName:self.optionLabel.text];
+        }
+        
+        self.state = OptionStateNeutral;
+    }
 }
 
 -(IBAction) handleLongPress:(UITapGestureRecognizer *)sender {
-    NSLog(@"Long Press");
-    self.backgroundColor = [UIColor redColor];
-}
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.state = OptionStateNegative;
+    self.optionLabel.textColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor colorWithRed:214/255.f green:69/255.f blue:65/255.f alpha:1];
+    [self.delegate didNagativeOptionWithName:self.optionLabel.text];
 }
 
 @end

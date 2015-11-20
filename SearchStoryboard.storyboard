@@ -6,64 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Actores-->
-        <scene sceneID="kcL-FA-mx7">
-            <objects>
-                <viewController id="pJC-5U-c0I" customClass="OptionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Shv-VL-8nk"/>
-                        <viewControllerLayoutGuide type="bottom" id="6u2-kp-DXe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="esF-E7-gUm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rCr-vi-whe">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nvD-B6-Fpl">
-                                    <rect key="frame" x="0.0" y="136" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <animations/>
-                                    <state key="normal" title="Button"/>
-                                    <connections>
-                                        <action selector="goToSearch:" destination="pJC-5U-c0I" eventType="touchUpInside" id="zUT-hE-5Vs"/>
-                                    </connections>
-                                </button>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionCell" id="eyK-N8-Goe" customClass="OptionTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyK-N8-Goe" id="ksu-6B-XGi">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6u2-kp-DXe" firstAttribute="top" secondItem="rCr-vi-whe" secondAttribute="bottom" id="FOM-LH-A7o"/>
-                            <constraint firstItem="rCr-vi-whe" firstAttribute="leading" secondItem="esF-E7-gUm" secondAttribute="leading" id="M9G-8R-j59"/>
-                            <constraint firstItem="rCr-vi-whe" firstAttribute="top" secondItem="Shv-VL-8nk" secondAttribute="bottom" constant="-64" id="Ok4-9L-RDg"/>
-                            <constraint firstItem="rCr-vi-whe" firstAttribute="width" secondItem="esF-E7-gUm" secondAttribute="width" id="jfc-aE-yZV"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Actores" id="Xa6-eO-D8n"/>
-                    <connections>
-                        <outlet property="tableView" destination="rCr-vi-whe" id="bZA-dn-o4Y"/>
-                        <segue destination="wYB-3R-yuR" kind="push" identifier="goToSearch" id="ZCG-VS-4I4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CT9-y7-exO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="67" y="-156"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VNN-IK-sCc">
             <objects>
@@ -75,7 +17,7 @@
                         <color key="barTintColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pJC-5U-c0I" kind="relationship" relationship="rootViewController" id="m35-BE-QdA"/>
+                        <segue destination="wYB-3R-yuR" kind="relationship" relationship="rootViewController" id="zfP-Fs-AWL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFD-al-bwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +27,7 @@
         <!--Actores-->
         <scene sceneID="UUh-YR-JH5">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wYB-3R-yuR" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wYB-3R-yuR" customClass="OptionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EkO-lU-NFq"/>
                         <viewControllerLayoutGuide type="bottom" id="mgc-r1-8Bq"/>
@@ -158,7 +100,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="596" y="-143"/>
+            <point key="canvasLocation" x="34" y="-143"/>
         </scene>
     </scenes>
 </document>
