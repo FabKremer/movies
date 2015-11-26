@@ -8,6 +8,8 @@
 
 #import "OptionsViewController.h"
 #import "KMAppDelegate.h"
+#import "OptionsSource.h"
+#import "MBProgressHUD.h"
 
 @interface OptionsViewController ()
 
@@ -19,19 +21,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.options = [NSArray arrayWithObjects: @"Jill Valentine", @"Peter Griffin", @"Meg Griffin", @"Jack Lolwut",
-              @"Mike Roflcoptor", @"Cindy Woods", @"Jessica Windmill", @"Alexander The Great",
-              @"Sarah Peterson", @"Scott Scottland", @"Geoff Fanta", @"Amanda Pope", @"Michael Meyers",
-              @"Richard Biggus", @"Montey Python", @"Mike Wut", @"Fake Person", @"Chair",
-              nil];
-    
-    self.optionsSearchResults = [self.options mutableCopy];
     self.positiveOptions = [NSMutableArray array];
     self.negativeOptions = [NSMutableArray array];
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"OptionTableViewCell" bundle:nil] forCellReuseIdentifier:@"OptionCell"];
+    
+    [self loadDataForType:self.navigationItem.title];
+}
+
+-(void) loadDataForType:(NSString*)type {
+    NSString *typeParameter = @"";
+    
+    if ([self.navigationItem.title isEqualToString: @"Actores"]) {
+        typeParameter = @"actors";
+    }
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    OptionsListCompletionBlock completionBlock = ^(NSArray* data, NSString* errorString)
+    {
+
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        if (data != nil)
+            if (!self.options)
+                self.options = [[NSArray alloc] init];
+        
+        self.options = [NSArray arrayWithArray:data];
+        self.optionsSearchResults = [self.options mutableCopy];
+        
+        [self.tableView reloadData];
+    };
+    
+    OptionsSource* source = [OptionsSource optionsSource];
+    [source getOptionsListForType:typeParameter completion:completionBlock];
+
 }
 
 - (void)didReceiveMemoryWarning {

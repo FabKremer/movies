@@ -54,6 +54,8 @@
 		8669C21E1BF12C6B00689C4D /* KMMovieDetailsCastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */; };
 		8669C2201BF12C9400689C4D /* KMMovieDetailsCastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */; };
 		8686F0B71BF3D16B00A3CB72 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8686F0B61BF3D16B00A3CB72 /* SearchStoryboard.storyboard */; };
+		9B13631C1C07A56800D19409 /* OptionsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B13631A1C07A56800D19409 /* OptionsSource.m */; };
+		9B13631D1C07A56800D19409 /* OptionsSourceJsonPattern.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B13631B1C07A56800D19409 /* OptionsSourceJsonPattern.json */; };
 		ABE7289D1FF74AD688F0B347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D671AB54250C4F98B999C342 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,9 @@
 		8669C21D1BF12C6B00689C4D /* KMMovieDetailsCastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMovieDetailsCastCell.m; sourceTree = "<group>"; };
 		8669C21F1BF12C9400689C4D /* KMMovieDetailsCastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMMovieDetailsCastCell.xib; sourceTree = "<group>"; };
 		8686F0B61BF3D16B00A3CB72 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SearchStoryboard.storyboard; path = ../../../SearchStoryboard.storyboard; sourceTree = "<group>"; };
+		9B1363191C07A56800D19409 /* OptionsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsSource.h; sourceTree = "<group>"; };
+		9B13631A1C07A56800D19409 /* OptionsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsSource.m; sourceTree = "<group>"; };
+		9B13631B1C07A56800D19409 /* OptionsSourceJsonPattern.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OptionsSourceJsonPattern.json; sourceTree = "<group>"; };
 		D671AB54250C4F98B999C342 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF2931B78474548FFC95ED3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +281,7 @@
 		7B2F31BC18A011FE008CD0DA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9B1363181C07A56800D19409 /* Options List */,
 				7B329E8318A11E63004D77BF /* Movies Details */,
 				7BA9591F18A0261B0004A8A9 /* Discover List */,
 				7B2F31D618A01794008CD0DA /* KMBaseSource.h */,
@@ -500,6 +506,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9B1363181C07A56800D19409 /* Options List */ = {
+			isa = PBXGroup;
+			children = (
+				9B1363191C07A56800D19409 /* OptionsSource.h */,
+				9B13631A1C07A56800D19409 /* OptionsSource.m */,
+				9B13631B1C07A56800D19409 /* OptionsSourceJsonPattern.json */,
+			);
+			path = "Options List";
+			sourceTree = "<group>";
+		};
 		B76528E9753E558E9FB9F23C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +607,7 @@
 			files = (
 				7B2F319418A011A0008CD0DA /* InfoPlist.strings in Resources */,
 				7B329EAB18A13304004D77BF /* KMMovieDetailsSourceJsonPattern.json in Resources */,
+				9B13631D1C07A56800D19409 /* OptionsSourceJsonPattern.json in Resources */,
 				8669C2201BF12C9400689C4D /* KMMovieDetailsCastCell.xib in Resources */,
 				7B2F31E018A01833008CD0DA /* KMSourceConfig.plist in Resources */,
 				7B66F5AE18A172AB0070DEB4 /* KMMovieDetailsPopularityCell.xib in Resources */,
@@ -690,6 +707,7 @@
 				7B2F31D818A01794008CD0DA /* KMBaseSource.m in Sources */,
 				7B66F5AC18A1729B0070DEB4 /* KMMovieDetailsPopularityCell.m in Sources */,
 				7B329E9A18A123B5004D77BF /* KMMovieDetailsCell.m in Sources */,
+				9B13631C1C07A56800D19409 /* OptionsSource.m in Sources */,
 				7B329E7F18A11278004D77BF /* NSString+MD5.m in Sources */,
 				7B2F319618A011A0008CD0DA /* main.m in Sources */,
 				7B2F31D118A01717008CD0DA /* KMGillSansLabel.m in Sources */,
