@@ -36,6 +36,10 @@
     
     if ([self.navigationItem.title isEqualToString: @"Actores"]) {
         typeParameter = @"actors";
+    } else  if ([self.navigationItem.title isEqualToString: @"Géneros"]) {
+        typeParameter = @"genres";
+    } else  if ([self.navigationItem.title isEqualToString: @"Directores"]) {
+        typeParameter = @"directors";
     }
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -180,9 +184,32 @@
         KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
         appDelegate.searchDictionary[@"actores_positivos"] = self.positiveOptions;
         appDelegate.searchDictionary[@"actores_negativos"] = self.negativeOptions;
-    } else if ([self.navigationItem.title isEqualToString: @"Bla bla bla"]) {
+    } else if ([self.navigationItem.title isEqualToString: @"Géneros"]) {
+        KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.searchDictionary[@"generos_positivos"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"generos_negativos"] = self.negativeOptions;
+    } else if ([self.navigationItem.title isEqualToString: @"Directores"]) {
+        KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.searchDictionary[@"directores_positivos"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"directores_negativos"] = self.negativeOptions;
+    }else if ([self.navigationItem.title isEqualToString: @"Bla bla bla"]) {
         
     }
 }
 
+- (IBAction)goToNextOrSubmit:(id)sender {
+    
+    if ([self.rightBarButton.title  isEqual: @"Siguiente"])
+    {
+        [self performSegueWithIdentifier:@"nextSegue" sender:sender];
+    }else if ([self.rightBarButton.title  isEqual: @"Buscar"])
+    {
+       //TO DO
+    }
+}
+
+- (IBAction)cancelOrBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+        //TO DO
+}
 @end

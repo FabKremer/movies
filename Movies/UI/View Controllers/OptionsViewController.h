@@ -18,5 +18,11 @@
 
 @property (strong, nonatomic) NSMutableArray *positiveOptions;
 @property (strong, nonatomic) NSMutableArray *negativeOptions;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButton;
+
+
+- (IBAction)goToNextOrSubmit:(id)sender;
+- (IBAction)cancelOrBack:(id)sender;
 
 @end
