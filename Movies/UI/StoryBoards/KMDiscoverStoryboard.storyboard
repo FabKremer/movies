@@ -152,11 +152,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                         <animations/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="326-sA-6ec">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="326-sA-6ec">
                                         <rect key="frame" x="80" y="14" width="160" height="112"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                                        <state key="normal" title="SEARCH!">
+                                        <state key="normal" image="search">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -367,6 +366,7 @@
     </scenes>
     <resources>
         <image name="refresh_button" width="48" height="48"/>
+        <image name="search" width="80" height="80"/>
         <image name="shadow-back" width="320" height="130"/>
         <image name="shadow_asset" width="160" height="48"/>
     </resources>
