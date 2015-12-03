@@ -13,6 +13,7 @@
 #import "KMDiscoverSource.h"
 #import "KMMovie.h"
 #import "KMMovieDetailsViewController.h"
+#import "KMAppDelegate.h"
 
 @interface KMDiscoverListViewController ()
 
@@ -51,6 +52,8 @@
     [self setupTableView];
     
     [self requestMovies];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestMovies) name:@"RequestMovies" object:nil];
+
 }
 
 #pragma mark -
@@ -78,6 +81,9 @@
     {
         self.networkLoadingViewController = segue.destinationViewController;
         self.networkLoadingViewController.delegate = self;
+    }else if ([segue.identifier isEqualToString:@"searchSegue"]) {
+        KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.searchDictionary = [NSMutableDictionary dictionary];
     }
 }
 
@@ -100,9 +106,10 @@
         else
             [self.networkLoadingViewController showErrorView];
     };
+    KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     KMDiscoverSource* source = [KMDiscoverSource discoverSource];
-    [source getDiscoverList:@"1" completion:completionBlock];
+    [source getMoviesWithParams:appDelegate.searchDictionary completion:completionBlock];
 }
 
 #pragma mark -

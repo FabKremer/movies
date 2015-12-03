@@ -10,7 +10,7 @@
 #import "KMSourceConfig.h"
 #import <AFNetworking/AFNetworking.h>
 
-#define kSimilarMoviesUrlFormat @"%@/movie/%@?api_key=%@"
+#define kSimilarMoviesUrlFormat @"%@/movies/%@"
 
 @implementation KMMovieDetailsSource
 
@@ -77,7 +77,7 @@
 
 - (NSString*)prepareUrl:(NSString*)movieId
 {
-    return [NSString stringWithFormat:kSimilarMoviesUrlFormat, [KMSourceConfig config].serverHost, movieId, [KMSourceConfig config].apiKey];
+    return [NSString stringWithFormat:kSimilarMoviesUrlFormat, [KMSourceConfig config].serverHost, movieId];
 }
 
 @end

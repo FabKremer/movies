@@ -40,8 +40,12 @@
         typeParameter = @"genres";
     } else  if ([self.navigationItem.title isEqualToString: @"Directores"]) {
         typeParameter = @"directors";
+    } else  if ([self.navigationItem.title isEqualToString: @"Años"]) {
+        typeParameter = @"movies/years";
+    } else  if ([self.navigationItem.title isEqualToString: @"Idiomas"]) {
+        typeParameter = @"movies/languages";
     }
-    
+
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     OptionsListCompletionBlock completionBlock = ^(NSArray* data, NSString* errorString)
     {
@@ -182,34 +186,45 @@
 -(void) encapsulateSearch {
     if ([self.navigationItem.title isEqualToString: @"Actores"]) {
         KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
-        appDelegate.searchDictionary[@"actores_positivos"] = self.positiveOptions;
-        appDelegate.searchDictionary[@"actores_negativos"] = self.negativeOptions;
+        appDelegate.searchDictionary[@"actores_si"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"actores_no"] = self.negativeOptions;
     } else if ([self.navigationItem.title isEqualToString: @"Géneros"]) {
         KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
-        appDelegate.searchDictionary[@"generos_positivos"] = self.positiveOptions;
-        appDelegate.searchDictionary[@"generos_negativos"] = self.negativeOptions;
+        appDelegate.searchDictionary[@"generos_si"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"generos_no"] = self.negativeOptions;
     } else if ([self.navigationItem.title isEqualToString: @"Directores"]) {
         KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
-        appDelegate.searchDictionary[@"directores_positivos"] = self.positiveOptions;
-        appDelegate.searchDictionary[@"directores_negativos"] = self.negativeOptions;
-    }else if ([self.navigationItem.title isEqualToString: @"Bla bla bla"]) {
-        
+        appDelegate.searchDictionary[@"directores_si"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"directores_no"] = self.negativeOptions;
+    }else if ([self.navigationItem.title isEqualToString: @"Años"]) {
+        KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.searchDictionary[@"anios_si"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"anios_no"] = self.negativeOptions;
+    }else if ([self.navigationItem.title isEqualToString: @"Idiomas"]) {
+        KMAppDelegate *appDelegate = (KMAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate.searchDictionary[@"lenguajes_si"] = self.positiveOptions;
+        appDelegate.searchDictionary[@"lenguajes_no"] = self.negativeOptions;
     }
 }
 
 - (IBAction)goToNextOrSubmit:(id)sender {
     
-    if ([self.rightBarButton.title  isEqual: @"Siguiente"])
+    if ([self.rightBarButton.title isEqual: @"Siguiente"])
     {
         [self performSegueWithIdentifier:@"nextSegue" sender:sender];
-    }else if ([self.rightBarButton.title  isEqual: @"Buscar"])
+    }else if ([self.rightBarButton.title isEqual: @"Buscar"])
     {
-       //TO DO
+        //TO DO
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter postNotificationName:@"RequestMovies" object:nil userInfo:nil];
+        
     }
 }
 
 - (IBAction)cancelOrBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-        //TO DO
+
 }
 @end

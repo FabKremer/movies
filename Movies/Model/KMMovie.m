@@ -9,7 +9,7 @@
 #import "KMMovie.h"
 #import "KM_NSDictionary+SafeValues.h"
 
-#define kMovieTitle @"original_title"
+#define kMovieTitle @"title"
 #define kMovieId @"id"
 #define kMovieYearDate @"year"
 #define kMovieSynopsis @"overview"

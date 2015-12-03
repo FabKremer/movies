@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 #import "KMMovie.h"
 
-#define kDiscoverUrlFormat @"%@/discover/movie?api_key=%@&sort_by=popularity.desc"
+#define kDiscoverUrlFormat @"%@/movies"
 
 @implementation KMDiscoverSource
 
@@ -31,18 +31,16 @@
 #pragma mark -
 #pragma mark Request Methods
 
-- (void)getDiscoverList:(NSString*)pageLimit completion:(KMDiscoverListCompletionBlock)completionBlock;
+- (void)getMoviesWithParams:(NSDictionary*)params completion:(KMDiscoverListCompletionBlock)completionBlock;
 {
     if (completionBlock)
     {
-        NSDictionary* parameters = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:pageLimit, nil] forKeys:[NSArray arrayWithObjects:@"page", nil]];
-        
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         
-        [manager GET:[self prepareUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+        [manager GET:[self prepareUrl] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
          {
              NSLog(@"JSON: %@", responseObject);
              NSDictionary* infosDictionary = [self dictionaryFromResponseData:operation.responseData jsonPatternFile:@"KMDiscoverSourceJsonPattern.json"];
@@ -72,7 +70,7 @@
 {
     if (data == nil)
         return nil;
-    NSArray* itemsList = [NSArray arrayWithArray:[data objectForKey:@"results"]];
+    NSArray* itemsList = [NSArray arrayWithArray:[data objectForKey:@"options"]];
     NSMutableArray* sortedArray = [[NSMutableArray alloc] init];
     for (NSDictionary* item in itemsList)
     {
@@ -88,7 +86,7 @@
 
 - (NSString*)prepareUrl
 {
-    return [NSString stringWithFormat:kDiscoverUrlFormat, [KMSourceConfig config].serverHost, [KMSourceConfig config].apiKey];
+    return [NSString stringWithFormat:kDiscoverUrlFormat, [KMSourceConfig config].serverHost];
 }
 
 @end

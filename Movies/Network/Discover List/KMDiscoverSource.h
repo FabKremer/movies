@@ -15,6 +15,6 @@ typedef void (^KMDiscoverListCompletionBlock)(NSArray* data, NSString* errorStri
 
 + (KMDiscoverSource*)discoverSource;
 
-- (void)getDiscoverList:(NSString*)pageLimit completion:(KMDiscoverListCompletionBlock)completionBlock;
+- (void)getMoviesWithParams:(NSDictionary*)params completion:(KMDiscoverListCompletionBlock)completionBlock;
 
 @end
