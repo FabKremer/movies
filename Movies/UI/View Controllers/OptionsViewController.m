@@ -111,6 +111,20 @@
     // Here we use the provided setImageWithURL: method to load the web image
     // Ensure you use a placeholder image otherwise cells will be initialized with no image
     NSString *optionName = [self.optionsSearchResults objectAtIndex:indexPath.row];
+    if ([optionName isEqualToString:@"de"]){
+        optionName = @"Aleman";
+    }else if ([optionName isEqualToString:@"en"]){
+        optionName = @"Inglés";
+    }else if ([optionName isEqualToString:@"fr"]){
+        optionName = @"Francés";
+    }else if ([optionName isEqualToString:@"it"]){
+        optionName = @"Italiano";
+    }else if ([optionName isEqualToString:@"ja"]){
+        optionName = @"Japonés";
+    }else if ([optionName isEqualToString:@"sv"]){
+        optionName = @"Sueco";
+    }
+    
     cell.optionLabel.text = optionName;
     cell.delegate = self;
     
@@ -162,11 +176,39 @@
 #pragma mark - OptionCellDelegate
 
 - (void) didPositiveOptionWithName:(NSString*)name {
+    if ([name isEqualToString:@"Aleman"]){
+        name = @"de";
+    }else if ([name isEqualToString:@"Inglés"]){
+        name = @"en";
+    }else if ([name isEqualToString:@"Francés"]){
+        name = @"fr";
+    }else if ([name isEqualToString:@"Italiano"]){
+        name = @"it";
+    }else if ([name isEqualToString:@"Japonés"]){
+        name = @"ja";
+    }else if ([name isEqualToString:@"Sueco"]){
+        name = @"sv";
+    }
+
     [self.positiveOptions addObject:name];
     [self encapsulateSearch];
 }
 
 - (void) didNagativeOptionWithName:(NSString*)name {
+    if ([name isEqualToString:@"Aleman"]){
+        name = @"de";
+    }else if ([name isEqualToString:@"Inglés"]){
+        name = @"en";
+    }else if ([name isEqualToString:@"Francés"]){
+        name = @"fr";
+    }else if ([name isEqualToString:@"Italiano"]){
+        name = @"it";
+    }else if ([name isEqualToString:@"Japonés"]){
+        name = @"ja";
+    }else if ([name isEqualToString:@"Sueco"]){
+        name = @"sv";
+    }
+
     if (![self.negativeOptions containsObject:name]) {
         [self.negativeOptions addObject:name];
         [self encapsulateSearch];
@@ -174,11 +216,39 @@
 }
 
 - (void) didRemovePositiveOptionWithName:(NSString*)name {
+    if ([name isEqualToString:@"Aleman"]){
+        name = @"de";
+    }else if ([name isEqualToString:@"Inglés"]){
+        name = @"en";
+    }else if ([name isEqualToString:@"Francés"]){
+        name = @"fr";
+    }else if ([name isEqualToString:@"Italiano"]){
+        name = @"it";
+    }else if ([name isEqualToString:@"Japonés"]){
+        name = @"ja";
+    }else if ([name isEqualToString:@"Sueco"]){
+        name = @"sv";
+    }
+
     [self.positiveOptions removeObject:name];
     [self encapsulateSearch];
 }
 
 - (void) didRemoveNagativeOptionWithName:(NSString*)name {
+    if ([name isEqualToString:@"Aleman"]){
+        name = @"de";
+    }else if ([name isEqualToString:@"Inglés"]){
+        name = @"en";
+    }else if ([name isEqualToString:@"Francés"]){
+        name = @"fr";
+    }else if ([name isEqualToString:@"Italiano"]){
+        name = @"it";
+    }else if ([name isEqualToString:@"Japonés"]){
+        name = @"ja";
+    }else if ([name isEqualToString:@"Sueco"]){
+        name = @"sv";
+    }
+
     [self.negativeOptions removeObject:name];
     [self encapsulateSearch];
 }

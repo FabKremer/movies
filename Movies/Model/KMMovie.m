@@ -96,8 +96,8 @@
     if ([genres count] == 0)
         return @"";
     NSMutableString* genresString = [[NSMutableString alloc] init];
-    for (NSDictionary* genre in genres)
-        [genresString appendFormat:@"%@, ", [genre km_safeStringForKey:@"name"]];
+    for (NSString* genre in genres)
+        [genresString appendFormat:@"%@, ", genre];
     [genresString replaceCharactersInRange:NSMakeRange([genresString length]-2, 2) withString:@""];
     return genresString;
 }

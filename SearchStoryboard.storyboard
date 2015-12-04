@@ -341,11 +341,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Años" id="31u-rV-1SO">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Om4-7y-sel">
-                            <connections>
-                                <action selector="cancelOrBack:" destination="Tp3-6x-WkK" id="qxT-he-N3X"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Siguiente" id="KkP-c8-nBl">
                             <connections>
                                 <action selector="goToNextOrSubmit:" destination="Tp3-6x-WkK" id="J1u-bh-WvX"/>
@@ -353,7 +348,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="leftBarButton" destination="Om4-7y-sel" id="Dge-OR-8wI"/>
                         <outlet property="rightBarButton" destination="KkP-c8-nBl" id="h1N-q6-QZZ"/>
                         <outlet property="searchDisplayController" destination="Eyn-ax-erp" id="MBA-nN-RLN"/>
                         <outlet property="tableView" destination="F1m-Zi-EYn" id="l1C-WR-Tg9"/>
