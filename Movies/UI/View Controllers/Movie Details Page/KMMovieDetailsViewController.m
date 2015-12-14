@@ -162,7 +162,7 @@
             [detailsCell.posterImageView sd_setImageWithURL:[NSURL URLWithString:self.movieDetails.movieThumbnailBackdropImageUrl]];
             detailsCell.movieTitleLabel.text = self.movieDetails.movieTitle;
             detailsCell.genresLabel.text = self.movieDetails.movieGenresString;
-            
+
             cell = detailsCell;
             
             break;

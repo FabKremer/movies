@@ -18,6 +18,7 @@
 #define kMovieDetailedPosterImageUrl @"thumbnail"
 #define kMoviePosterRelatedMovies @"similar"
 #define kMovieGenres @"genres"
+#define kMovieActors @"actors"
 #define kMoviePopularity @"popularity"
 #define kMovieVoteCount @"vote_count"
 #define kMovieVoteAverage @"vote_average"
@@ -37,6 +38,7 @@
     _movieOriginalBackdropImageUrl = @"";
     _movieThumbnailBackdropImageUrl = @"";
     _movieGenresString = @"";
+    _movieActorsString = @"";
     _moviePopularity = @"";
     _movieVoteAverage = @"";
     _movieVoteCount = @"";
@@ -74,6 +76,8 @@
         _movieThumbnailBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w300/%@", [dictionary km_safeStringForKey:kMovieBackdropPosterImageUrl]];
         _movieOriginalPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w500/%@", [dictionary km_safeStringForKey:kMovieOriginalPosterImageUrl]];
         _movieGenresString = [self processGenresIntoString:[dictionary km_safeArrayForKey:kMovieGenres]];
+        _movieActorsString = [self processActorsIntoString:[dictionary km_safeArrayForKey:kMovieActors]];
+
         _movieVoteCount = [NSString stringWithFormat:@"%d", [[dictionary km_safeNumberForKey:kMovieVoteCount] intValue]];
         
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -100,6 +104,17 @@
         [genresString appendFormat:@"%@, ", genre];
     [genresString replaceCharactersInRange:NSMakeRange([genresString length]-2, 2) withString:@""];
     return genresString;
+}
+
+- (NSString*)processActorsIntoString:(NSArray*)actors
+{
+    if ([actors count] == 0)
+        return @"";
+    NSMutableString* actorsString = [[NSMutableString alloc] init];
+    for (NSString* actor in actors)
+        [actorsString appendFormat:@"%@, ", actor];
+    [actorsString replaceCharactersInRange:NSMakeRange([actorsString length]-2, 2) withString:@""];
+    return actorsString;
 }
 
 @end

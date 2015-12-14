@@ -123,6 +123,8 @@
         optionName = @"Japonés";
     }else if ([optionName isEqualToString:@"sv"]){
         optionName = @"Sueco";
+    }else if ([optionName isEqualToString:@"es"]){
+        optionName = @"Español";
     }
     
     cell.optionLabel.text = optionName;
@@ -188,6 +190,8 @@
         name = @"ja";
     }else if ([name isEqualToString:@"Sueco"]){
         name = @"sv";
+    }else if ([name isEqualToString:@"Español"]){
+        name = @"es";
     }
 
     [self.positiveOptions addObject:name];
@@ -207,6 +211,8 @@
         name = @"ja";
     }else if ([name isEqualToString:@"Sueco"]){
         name = @"sv";
+    }else if ([name isEqualToString:@"Español"]){
+        name = @"es";
     }
 
     if (![self.negativeOptions containsObject:name]) {
@@ -228,6 +234,8 @@
         name = @"ja";
     }else if ([name isEqualToString:@"Sueco"]){
         name = @"sv";
+    }else if ([name isEqualToString:@"Español"]){
+        name = @"es";
     }
 
     [self.positiveOptions removeObject:name];
@@ -247,6 +255,8 @@
         name = @"ja";
     }else if ([name isEqualToString:@"Sueco"]){
         name = @"sv";
+    }else if ([name isEqualToString:@"Español"]){
+        name = @"es";
     }
 
     [self.negativeOptions removeObject:name];
